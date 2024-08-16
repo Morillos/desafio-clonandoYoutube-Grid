@@ -1,0 +1,135 @@
+@import url(./reset.css);
+
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+}
+.button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+}
+
+body {
+  grid-template-columns: 1fr 7fr;
+  grid-template-rows: 6vh 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  margin: 12px;
+  gap: 12px;
+}
+
+/* Menu Superior */
+#nav-bar {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: space-between;
+  align-items: center;
+}
+.searchBar {
+  display: flex;
+  justify-self: center;
+  max-height: 3vh;
+}
+#search-input {
+  width: 20vw;
+  border: 1px solid #cccccc;
+}
+.search-button {
+  width: 57px;
+  background-color: #f8f8f8;
+  border-width: 1px 1px 1px 0px;
+  border-style: solid;
+  border-color: #cccccc;
+}
+.menu-logo {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.menu-acc {
+  gap: 24px;
+  display: flex;
+  align-self: center;
+  justify-self: end;
+}
+.menu-acc > img {
+  max-height: 5vh;
+}
+.acc-photo {
+  border-radius: 50%;
+}
+
+/* Menu Lateral */
+#sidebar {
+  grid-area: sidebar;
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  align-content: space-between;
+  height: 400px;
+  max-width: 200px;
+}
+.side-menu {
+  display: flex;
+  align-items: center;
+}
+
+/* Conteúdo Principal */
+#main-container {
+  /* background-color: lightpink; */
+  grid-area: main;
+  display: grid;
+  grid: 260px / 1fr 1fr 1fr 1fr;
+}
+
+/* Thumb e informações */
+.thumb-container {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  gap: 8px;
+  margin: 16px;
+}
+
+.thumb-container>img {
+  place-self: center;
+  border-radius: 10px;
+  width: 75%;
+}
+
+.thumb-info{
+  display: grid;
+  grid-template: 1fr 50% / 1fr 2fr;
+  grid-template-areas:
+    "channel tittle"
+    ". info";
+
+  justify-items: start;
+}
+
+.channel {
+  grid-area: channel;
+  justify-self: center;
+}
+
+.tittle {
+  grid-area: tittle;
+  text-align: left;
+}
+
+.info{
+  grid-area: info;
+}
